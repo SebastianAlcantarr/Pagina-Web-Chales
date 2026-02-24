@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Chales Pong Cup</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#bf0202", // Vibrant Red
+                        "navy": "#1a202c",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#1a202c", // Matching Navy from prompt
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+    <!-- Top Navigation Bar -->
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+        <div
+            class="flex items-center bg-navy/95 backdrop-blur-md sticky top-0 z-50 p-4 justify-between border-b border-white/10">
+            <div class="text-primary flex size-12 shrink-0 items-center justify-center">
+                <span class="material-symbols-outlined text-3xl">sports_score</span>
+            </div>
+            <h2 class="text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 ml-2">Chales</h2>
+            <div class="flex w-12 items-center justify-end">
+                <button
+                    class="flex items-center justify-center rounded-lg h-10 w-10 bg-white/10 text-white hover:bg-primary transition-colors">
+                    <span class="material-symbols-outlined">account_circle</span>
+                </button>
+            </div>
+        </div>
+        <!-- Hero Section -->
+        <div class="@container">
+            <div class="@[480px]:p-4">
+                <div class="relative flex min-h-[520px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-6 text-center"
+                    data-alt="Beer pong table in a dark neon sports bar"
+                    style='background-image: linear-gradient(rgba(26, 32, 44, 0.7) 0%, rgba(26, 32, 44, 0.9) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAEOI0AC0nR8XaZ9ufS0gkfoJwPRJzvUkqa3DtjrWtxIlzbHgil8Ov18-aoSc8gJ2Ov-js1YTPYXi2zQhjNNU9HlXsyQM4wCD0H96V4Zne_Pngr795Xf7JcgJVYwSMYN-WI9Pl_-LAAOBYHpWsTZZ9FG3qy6betn689Yk853C0U0prpFmaHtP7raKcsbt62eB8_v8xRA5pTuUu0jfm--Orgv9xDWCzoa3cedtJM8XQt0SZx5D4TZtSiQKOchZx8DK4pHLlblBvZ6BXf");'>
+                    <div
+                        class="inline-flex items-center gap-2 bg-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest text-white mb-2">
+                        <span class="material-symbols-outlined text-sm">calendar_today</span>4 de abril de 2026
+                    </div>
+                    <div class="flex flex-col gap-4 max-w-2xl">
+                        <h1 class="text-white text-5xl font-extrabold leading-tight tracking-tighter @[480px]:text-7xl">
+                            PONG CUP <span class="text-primary">2026</span>
+                        </h1>
+                        <p class="text-slate-300 text-lg font-medium leading-relaxed max-w-lg mx-auto">
+                            Participa en el mejor torneo de beer pong.
+                        </p>
+                    </div>
+                    <div class="flex flex-col @[480px]:flex-row gap-4 mt-4 w-full @[480px]:w-auto">
+                        <a class="flex items-center justify-center bg-primary hover:bg-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105"
+                            href="#register">
+                            Registrar Dupla
+                        </a>
+                        <a class="flex items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all"
+                            href="#info">
+                            Aprender Reglas
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Event Info Section -->
+        <section class="px-4 py-16 @container max-w-6xl mx-auto w-full" id="info">
+            <div class="flex flex-col gap-4 mb-12">
+                <h1 class="text-primary text-sm font-bold uppercase tracking-[0.2em]">Informacion del Torneo</h1>
+                <div class="w-20 h-1.5 bg-primary rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 @[640px]:grid-cols-3 gap-6">
+                <!-- Rules -->
+                <div
+                    class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="bg-primary/10 text-primary w-12 h-12 rounded-lg flex items-center justify-center">
+                        <span class="material-symbols-outlined text-3xl">menu_book</span>
+                    </div>
+                    <div>
+                        <h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold mb-2">Tournament Rules</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Standard house rules apply. Double elimination bracket. 2 players per team. Professional
+                            referees on-site.
+                        </p>
+                    </div>
+                </div>
+                <!-- Prizes -->
+                <div
+                    class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="bg-primary/10 text-primary w-12 h-12 rounded-lg flex items-center justify-center">
+                        <span class="material-symbols-outlined text-3xl">trophy</span>
+                    </div>
+                    <div>
+                        <h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold mb-2">Grand Prizes</h3>
+                        <ul class="text-slate-600 dark:text-slate-400 text-sm space-y-2">
+                            <li class="flex items-center gap-2"><span class="font-bold text-primary">1st:</span> $500 +
+                                Chales Cup</li>
+                            <li class="flex items-center gap-2"><span class="font-bold text-primary">2nd:</span> $200
+                                Cash</li>
+                            <li class="flex items-center gap-2"><span class="font-bold text-primary">3rd:</span> $50 Bar
+                                Tab</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Location -->
+                <div
+                    class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="bg-primary/10 text-primary w-12 h-12 rounded-lg flex items-center justify-center">
+                        <span class="material-symbols-outlined text-3xl">map</span>
+                    </div>
+                    <div>
+                        <h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold mb-2">Venue Location</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-3">
+                            Chales FC Clubhouse, Sports District. 45th Avenue, Metro City.
+                        </p>
+                        <div class="w-full h-24 rounded-lg overflow-hidden relative">
+                            <img alt="Map location" class="w-full h-full object-cover grayscale brightness-50"
+                                data-alt="Map view showing the sports district" data-location="Metro City"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkaxhEQUQ2hF41zFZzd4QVVIawbpDTn-JXqvC3Igv-w-n5T25zC6D5jwUyfqkzC5O4t6DKwCiDcfxGWWr03kaEsUCPzkPrli64qZ66h1B_UvPOAKqGiMaSR57JFDy--vYj6LzbZrUw3Vfo-LbRRXZdjBjJHqkj-0TWYS40lQHq9pG9vAQXhdoVdxnTt3l49iuG9e-_wlMUYFfoFP59o8kYO-0ORrYguUopY6JIp7UMFqZuWQtRwTjfMZYrfDZIdVC4wrE29_AWUoiz" />
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary text-3xl">location_on</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Registration Form Section -->
+        <section class="relative px-4 py-20 bg-navy overflow-hidden" id="register">
+            <!-- Decorative Background Element -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -mr-32 -mt-32"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -ml-32 -mb-32"></div>
+            <div class="max-w-xl mx-auto relative z-10">
+                <div class="text-center mb-10">
+                    <h2 class="text-primary font-bold uppercase tracking-widest text-sm mb-2">Ready to play?</h2>
+                    <h1 class="text-white text-4xl font-black">Team Registration</h1>
+                </div>
+                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-2xl">
+                    <form class="space-y-6">
+                        <div class="space-y-2">
+                            <label class="text-slate-300 text-sm font-semibold ml-1">Team Name</label>
+                            <input
+                                class="w-full bg-white/5 border border-white/10 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent placeholder-slate-500"
+                                placeholder="Enter team name" type="text" />
+                        </div>
+                        <div class="grid grid-cols-1 @[480px]:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-slate-300 text-sm font-semibold ml-1">Player 1 Name</label>
+                                <input
+                                    class="w-full bg-white/5 border border-white/10 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent placeholder-slate-500"
+                                    placeholder="Full Name" type="text" />
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-slate-300 text-sm font-semibold ml-1">Player 2 Name</label>
+                                <input
+                                    class="w-full bg-white/5 border border-white/10 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent placeholder-slate-500"
+                                    placeholder="Full Name" type="text" />
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-slate-300 text-sm font-semibold ml-1">WhatsApp Contact</label>
+                            <div class="relative">
+                                <span
+                                    class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-500">call</span>
+                                <input
+                                    class="w-full bg-white/5 border border-white/10 rounded-lg py-3 pl-12 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent placeholder-slate-500"
+                                    placeholder="+1 (555) 000-0000" type="tel" />
+                            </div>
+                        </div>
+                        <div class="pt-4">
+                            <button
+                                class="w-full bg-primary hover:bg-red-700 text-white font-bold py-4 rounded-lg shadow-lg shadow-primary/20 transition-all active:scale-[0.98]"
+                                type="submit">
+                                Complete Registration
+                            </button>
+                            <p class="text-slate-500 text-xs text-center mt-4">
+                                By registering, you agree to follow tournament rules and conduct. Registration fee due
+                                on event day.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer class="bg-background-dark border-t border-white/5 py-10 px-4">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-3">
+                    <div class="bg-primary p-2 rounded-lg">
+                        <span class="material-symbols-outlined text-white">sports_score</span>
+                    </div>
+                    <span class="text-white font-black text-xl tracking-tight">CHALES FC</span>
+                </div>
+                <div class="flex gap-8 text-slate-400 font-medium text-sm">
+                    <a class="hover:text-primary" href="#">Rules</a>
+                    <a class="hover:text-primary" href="#">Location</a>
+                    <a class="hover:text-primary" href="#">Contact</a>
+                    <a class="hover:text-primary" href="#">Privacy</a>
+                </div>
+                <div class="flex gap-4">
+                    <button
+                        class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-colors">
+                        <span class="material-symbols-outlined">share</span>
+                    </button>
+                    <button
+                        class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-colors">
+                        <span class="material-symbols-outlined">alternate_email</span>
+                    </button>
+                </div>
+            </div>
+            <div class="text-center mt-10 text-slate-600 text-xs">
+
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
