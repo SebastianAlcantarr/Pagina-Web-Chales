@@ -6,7 +6,6 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Chales Pong Cup</title>
-    <link rel="icon" type="image/svg+xml" href="Pagina-Web-Chales/imagenes/img.png" viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏆%3C/text%3E%3C/svg%3E">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
         rel="stylesheet" />
@@ -73,13 +72,9 @@
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
-        @keyframes fade-in-up {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fade-in-scale {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
         @keyframes ball-arc {
             0% { transform: translate(0, 0) scale(1); opacity: 0.7; }
@@ -135,135 +130,6 @@
         .animate-neon { animation: neon-flicker 4s ease-in-out infinite; }
         .animate-glow-border { animation: glow-border 3s ease-in-out infinite; }
 
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-        .reveal-left { opacity: 0; transform: translateX(-40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-        .reveal-left.visible { opacity: 1; transform: translateX(0); }
-        .reveal-right { opacity: 0; transform: translateX(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-        .reveal-right.visible { opacity: 1; transform: translateX(0); }
-        .reveal-scale { opacity: 0; transform: scale(0.85); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-        .reveal-scale.visible { opacity: 1; transform: scale(1); }
-
-        /* Dot pattern */
-        .dot-pattern {
-            background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px);
-            background-size: 30px 30px;
-        }
-
-        /* Grid pattern */
-        .grid-pattern {
-            background-image:
-                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-            background-size: 60px 60px;
-        }
-
-        /* Hex pattern */
-        .hex-pattern {
-            background-image: radial-gradient(circle at 25% 25%, rgba(209, 24, 45, 0.03) 0%, transparent 50%),
-                              radial-gradient(circle at 75% 75%, rgba(19, 33, 79, 0.05) 0%, transparent 50%);
-        }
-
-        /* Cup gradient */
-        .cup-gradient {
-            background: linear-gradient(135deg, rgb(209, 24, 45) 0%, rgb(180, 20, 38) 100%);
-        }
-
-        /* Glowing text */
-        .glow-text {
-            text-shadow: 0 0 40px rgba(209, 24, 45, 0.5), 0 0 80px rgba(209, 24, 45, 0.2);
-        }
-        .glow-text-navy {
-            text-shadow: 0 0 40px rgba(19, 33, 79, 0.8), 0 0 80px rgba(19, 33, 79, 0.4);
-        }
-
-        /* Neon border */
-        .neon-border {
-            box-shadow: inset 0 0 20px rgba(209, 24, 45, 0.1), 0 0 20px rgba(209, 24, 45, 0.1);
-        }
-
-        /* Card hover effect */
-        .card-hover {
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .card-hover:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 30px rgba(209, 24, 45, 0.1);
-        }
-
-        /* Shimmer button */
-        .btn-shimmer {
-            position: relative;
-            overflow: hidden;
-        }
-        .btn-shimmer::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
-            animation: shimmer 3s ease-in-out infinite;
-        }
-
-        /* Glass card */
-        .glass-card {
-            background: rgba(19, 33, 79, 0.4);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.08);
-        }
-
-        /* Gradient text */
-        .gradient-text {
-            background: linear-gradient(135deg, #fff 0%, rgb(209, 24, 45) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Countdown box */
-        .countdown-box {
-            background: linear-gradient(145deg, rgba(19, 33, 79, 0.8), rgba(19, 33, 79, 0.4));
-            border: 1px solid rgba(209, 24, 45, 0.3);
-            animation: countdown-pulse 3s ease-in-out infinite;
-        }
-
-        /* Table surface */
-        .table-surface {
-            background: linear-gradient(180deg,
-                rgba(19, 33, 79, 0.9) 0%,
-                rgba(19, 33, 79, 0.7) 30%,
-                rgba(19, 33, 79, 0.5) 100%
-            );
-        }
-
-        /* Step connector line */
-        .step-line::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: -2rem;
-            width: 2rem;
-            height: 2px;
-            background: linear-gradient(90deg, rgba(209, 24, 45, 0.5), transparent);
-        }
-
-        /* Scrollbar styling */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: rgb(19, 33, 79); }
-        ::-webkit-scrollbar-thumb { background: rgb(209, 24, 45); border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: rgb(230, 40, 60); }
-
-        /* Smooth scrolling */
-        html { scroll-behavior: smooth; }
-
-        /* Selection color */
-        ::selection {
-            background: rgba(209, 24, 45, 0.3);
-            color: white;
-        }
     </style>
 </head>
 
@@ -333,14 +199,14 @@
                 <!-- Glowing orbs -->
                 <div class="absolute top-[10%] right-[30%] w-72 h-72 bg-accent/10 rounded-full blur-3xl"></div>
                 <div class="absolute bottom-[10%] left-[20%] w-96 h-96 bg-navy/50 rounded-full blur-3xl"></div>
-                <div class="absolute top-[50%] left-[50%] w-48 h-48 bg-accent/5 rounded-full blur-2xl animate-pulse"></div>
+                <div class="absolute top-[50%] left-[50%] w-48 h-48 bg-accent/5 rounded-full blur-2xl"></div>
             </div>
 
             <!-- Hero Content -->
             <div class="relative z-10 flex flex-col items-center justify-center min-h-[620px] px-6 py-20 text-center">
                 <!-- Badge -->
-                <div class="inline-flex items-center gap-2 bg-accent/20 border border-accent/90 px-5 py-2 rounded-full text-2xl font-bold uppercase tracking-widest text-accent mb-6  ">
-                    <span </span>4 de abril de 2026
+                <div class="inline-flex items-center gap-2 bg-accent/20 border border-accent/90 px-5 py-2 rounded-full text-2xl font-bold uppercase tracking-widest text-accent mb-6">
+                    4 de abril de 2026
                 </div>
 
                 <!-- Main Title -->
@@ -364,7 +230,7 @@
 
                 <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                    <a class="btn-shimmer flex items-center justify-center gap-2 bg-accent hover:bg-red-700 text-white px-10 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 animate-pulse-glow shadow-xl"
+                    <a class="btn-shimmer flex items-center justify-center gap-2 bg-accent hover:bg-red-700 text-white px-10 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-xl"
                         href="#register">
                         Registrar Dupla
                     </a>
@@ -404,14 +270,14 @@
                 <svg class="w-24 h-24 animate-spin-slow" viewBox="0 0 40 40"><use href="#ping-pong-ball"/></svg>
             </div>
 
-            <div class="flex flex-col items-center text-center gap-4 mb-16 reveal">
+            <div class="flex flex-col items-center text-center gap-4 mb-16">
                 <h2 class="text-4xl sm:text-5xl font-black text-white">Información del <span class="text-accent">Torneo</span></h2>
                 <div class="w-24 h-1.5 bg-gradient-to-r from-accent to-navy rounded-full"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Rules -->
-                <div class="card-hover group flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 relative overflow-hidden reveal" style="animation-delay: 0.1s;">
+                <div class="card-hover group flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 relative overflow-hidden" style="animation-delay: 0.1s;">
                     <!-- Top accent border -->
                     <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent to-accent/50"></div>
                     <!-- Decorative cup watermark -->
@@ -433,7 +299,7 @@
                 </div>
 
                 <!-- Prizes -->
-                <div class="card-hover group flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 relative overflow-hidden reveal" style="animation-delay: 0.2s;">
+                <div class="card-hover group flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 relative overflow-hidden" style="animation-delay: 0.2s;">
                     <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-500 to-yellow-500/50"></div>
                     <svg class="absolute -bottom-2 -right-2 w-20 h-20 opacity-5 group-hover:opacity-10 transition-opacity" viewBox="0 0 40 40"><use href="#ping-pong-ball"/></svg>
 
@@ -460,7 +326,7 @@
                 </div>
 
                 <!-- Location -->
-                <div class="card-hover group flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 relative overflow-hidden reveal" style="animation-delay: 0.3s;">
+                <div class="card-hover group flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 relative overflow-hidden" style="animation-delay: 0.3s;">
                     <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-blue-500/50"></div>
                     <div class="bg-blue-500/10 text-blue-400 w-14 h-14 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
                         <span class="material-symbols-outlined text-3xl">map</span>
@@ -512,7 +378,7 @@
                 <svg class="w-16 h-22 absolute bottom-0 left-[5%] opacity-10 rotate-[-8deg]" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
             </div>
 
-            <div class="max-w-xl mx-auto relative z-10 reveal">
+            <div class="max-w-xl mx-auto relative z-10">
                 <div class="text-center mb-10">
                     <div class="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-accent mb-4">
                         <span class="material-symbols-outlined text-sm">group_add</span> Inscripción abierta
@@ -616,21 +482,7 @@
         </footer>
     </div>
 
-    <!-- Scroll reveal script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const reveals = document.querySelectorAll('.reveal');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-            reveals.forEach(el => observer.observe(el));
-        });
-    </script>
-</body>
+    </body>
 
 </html>
 
