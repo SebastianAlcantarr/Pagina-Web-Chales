@@ -157,6 +157,7 @@
 
     <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
 
+
         <!-- Top Navigation Bar -->
         <nav class="flex flex-wrap items-center bg-navy/95 backdrop-blur-md sticky top-0 z-50 px-6 py-3 justify-between border-b border-white/10 shadow-lg shadow-navy/50 gap-4">
             <div class="flex items-center gap-3">
@@ -173,61 +174,41 @@
             </div>
         </nav>
 
+
         <!-- Hero Section -->
         <div class="relative">
             <!-- Background -->
-            <div class="absolute inset-0 bg-gradient-to-br from-navy via-[#0f1a4a] to-[#1a0a2e] dot-pattern"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-navy via-[#0f1a4a] to-[#1a0a2e]"></div>
             <!-- Decorative elements -->
             <div class="absolute inset-0 overflow-hidden pointer-events-none">
-                <!-- Floating ping pong balls -->
                 <svg class="w-8 h-8 absolute top-[25%] right-[12%] animate-float-reverse opacity-40" viewBox="0 0 40 40"><use href="#ping-pong-ball"/></svg>
                 <svg class="w-10 h-10 absolute bottom-[20%] left-[15%] animate-float-slow opacity-50" viewBox="0 0 40 40"><use href="#ping-pong-ball"/></svg>
                 <svg class="w-6 h-6 absolute top-[60%] right-[5%] animate-float opacity-30" viewBox="0 0 40 40"><use href="#ping-pong-ball"/></svg>
                 <svg class="w-14 h-14 absolute bottom-[10%] right-[20%] animate-float-reverse opacity-25" viewBox="0 0 40 40"><use href="#ping-pong-ball"/></svg>
-
-                <!-- Red cups formation - left side -->
-                <svg class="w-16 h-20 absolute bottom-[5%] left-[3%] opacity-20 rotate-[-10deg]" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
-                <svg class="w-14 h-18 absolute bottom-[8%] left-[8%] opacity-15 rotate-[5deg]" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
-                <svg class="w-12 h-16 absolute bottom-[3%] left-[12%] opacity-10" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
-
-                <!-- Red cups formation - right side -->
-                <svg class="w-16 h-20 absolute bottom-[5%] right-[3%] opacity-20 rotate-[10deg]" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
-                <svg class="w-14 h-18 absolute bottom-[8%] right-[8%] opacity-15 rotate-[-5deg]" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
-                <svg class="w-12 h-16 absolute bottom-[3%] right-[12%] opacity-10" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
-
-                <!-- Glowing orbs -->
-                <div class="absolute top-[10%] right-[30%] w-72 h-72 bg-accent/10 rounded-full blur-3xl"></div>
-                <div class="absolute bottom-[10%] left-[20%] w-96 h-96 bg-navy/50 rounded-full blur-3xl"></div>
-                <div class="absolute top-[50%] left-[50%] w-48 h-48 bg-accent/5 rounded-full blur-2xl"></div>
+                <svg class="w-14 h-20 absolute bottom-[0%] left-[2%] opacity-15 rotate-[-8deg]" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
+                <svg class="w-14 h-20 absolute bottom-[0%] right-[2%] opacity-15 rotate-[8deg]" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
+                <div class="absolute top-[10%] right-[25%] w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-[15%] w-80 h-80 bg-navy/60 rounded-full blur-3xl"></div>
             </div>
 
             <!-- Hero Content -->
-            <div class="relative z-10 flex flex-col items-center justify-center min-h-[620px] px-6 py-20 text-center">
-                <!-- Badge -->
-                <div class="inline-flex items-center gap-2 bg-accent/20 border border-accent/90 px-5 py-2 rounded-full text-2xl font-bold uppercase tracking-widest text-accent mb-6">
-                    4 de abril de 2026
-                </div>
-
-                <!-- Main Title -->
-         <div
-                class="relative z-10 flex flex-col items-center justify-center min-h-[320px] sm:min-h-[380px] px-6 py-16 text-center">
+            <div class="relative z-10 flex flex-col items-center justify-center min-h-[320px] sm:min-h-[380px] px-6 py-16 text-center">
                 <!-- icon row -->
                 <div class="flex items-center justify-center gap-4 mb-5">
-                    <svg class="w-9 h-12 opacity-80" viewBox="0 0 60 80">
-                        <use href="#red-cup" />
-                    </svg>
-                    <svg class="w-7 h-7 animate-bounce-ball" viewBox="0 0 40 40">
-                        <use href="#ping-pong-ball" />
-                    </svg>
-                    <svg class="w-9 h-12 opacity-80 scale-x-[-1]" viewBox="0 0 60 80">
-                        <use href="#red-cup" />
-                    </svg>
+                    <svg class="w-9 h-12 opacity-80" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
+                    <svg class="w-7 h-7 animate-bounce-ball" viewBox="0 0 40 40"><use href="#ping-pong-ball"/></svg>
+                    <svg class="w-9 h-12 opacity-80 scale-x-[-1]" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
                 </div>
-
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 bg-accent/20 border border-accent/30 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-accent mb-5">
+                    4 de abril de 2026
+                </div>
                 <h1 class="text-white text-4xl sm:text-6xl lg:text-7xl font-black leading-none tracking-tighter mb-3">
                     CHALES <span class="text-accent glow-text">PONG CUP</span>
                 </h1>
-             </div>
+                <p class="text-slate-400 text-base sm:text-lg font-medium max-w-lg mb-8">
+                    Participa en la Pong Cup de los Chales
+                </p>
                 <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                     <a class="btn-shimmer flex items-center justify-center gap-2 bg-accent hover:bg-red-700 text-white px-10 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-xl"
@@ -236,7 +217,7 @@
                     </a>
                     <a class="flex items-center justify-center gap-2 bg-white/5 backdrop-blur-sm border-2 border-white/20 hover:border-accent/50 hover:bg-white/10 text-white px-10 py-4 rounded-full font-bold text-lg transition-all"
                         href="#info">
-                        Informacion general del Torneo
+                        Información del Torneo
                     </a>
                 </div>
 
