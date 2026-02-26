@@ -39,97 +39,294 @@
 
         /* Animations */
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
         }
+
         @keyframes float-reverse {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(15px) rotate(-3deg); }
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(15px) rotate(-3deg);
+            }
         }
+
         @keyframes float-horizontal {
-            0%, 100% { transform: translateX(0px) translateY(0px); }
-            25% { transform: translateX(15px) translateY(-10px); }
-            75% { transform: translateX(-15px) translateY(10px); }
+
+            0%,
+            100% {
+                transform: translateX(0px) translateY(0px);
+            }
+
+            25% {
+                transform: translateX(15px) translateY(-10px);
+            }
+
+            75% {
+                transform: translateX(-15px) translateY(10px);
+            }
         }
+
         @keyframes bounce-ball {
-            0%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-30px); }
-            60% { transform: translateY(-15px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-30px);
+            }
+
+            60% {
+                transform: translateY(-15px);
+            }
         }
+
         @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(209, 24, 45, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(209, 24, 45, 0.6), 0 0 80px rgba(209, 24, 45, 0.3); }
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(209, 24, 45, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(209, 24, 45, 0.6), 0 0 80px rgba(209, 24, 45, 0.3);
+            }
         }
+
         @keyframes pulse-glow-navy {
-            0%, 100% { box-shadow: 0 0 30px rgba(19, 33, 79, 0.4); }
-            50% { box-shadow: 0 0 60px rgba(19, 33, 79, 0.7), 0 0 100px rgba(19, 33, 79, 0.3); }
+
+            0%,
+            100% {
+                box-shadow: 0 0 30px rgba(19, 33, 79, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 60px rgba(19, 33, 79, 0.7), 0 0 100px rgba(19, 33, 79, 0.3);
+            }
         }
+
         @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
         }
+
         @keyframes spin-slow {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
+
         @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
         }
+
         @keyframes ball-arc {
-            0% { transform: translate(0, 0) scale(1); opacity: 0.7; }
-            25% { transform: translate(40px, -80px) scale(0.9); opacity: 1; }
-            50% { transform: translate(80px, -100px) scale(0.85); opacity: 1; }
-            75% { transform: translate(120px, -60px) scale(0.9); opacity: 0.8; }
-            100% { transform: translate(160px, 0px) scale(0.7); opacity: 0; }
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.7;
+            }
+
+            25% {
+                transform: translate(40px, -80px) scale(0.9);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translate(80px, -100px) scale(0.85);
+                opacity: 1;
+            }
+
+            75% {
+                transform: translate(120px, -60px) scale(0.9);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translate(160px, 0px) scale(0.7);
+                opacity: 0;
+            }
         }
+
         @keyframes splash {
-            0% { transform: scale(0); opacity: 0.8; }
-            50% { transform: scale(1.5); opacity: 0.4; }
-            100% { transform: scale(2.5); opacity: 0; }
+            0% {
+                transform: scale(0);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: scale(1.5);
+                opacity: 0.4;
+            }
+
+            100% {
+                transform: scale(2.5);
+                opacity: 0;
+            }
         }
+
         @keyframes wiggle {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(3deg); }
-            75% { transform: rotate(-3deg); }
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(3deg);
+            }
+
+            75% {
+                transform: rotate(-3deg);
+            }
         }
+
         @keyframes glow-border {
-            0%, 100% { border-color: rgba(209, 24, 45, 0.2); }
-            50% { border-color: rgba(209, 24, 45, 0.6); }
+
+            0%,
+            100% {
+                border-color: rgba(209, 24, 45, 0.2);
+            }
+
+            50% {
+                border-color: rgba(209, 24, 45, 0.6);
+            }
         }
+
         @keyframes slide-in-left {
-            from { opacity: 0; transform: translateX(-60px); }
-            to { opacity: 1; transform: translateX(0); }
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
+
         @keyframes slide-in-right {
-            from { opacity: 0; transform: translateX(60px); }
-            to { opacity: 1; transform: translateX(0); }
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
+
         @keyframes neon-flicker {
-            0%, 100% { opacity: 1; }
-            5% { opacity: 0.8; }
-            10% { opacity: 1; }
-            15% { opacity: 0.6; }
-            20% { opacity: 1; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            5% {
+                opacity: 0.8;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            15% {
+                opacity: 0.6;
+            }
+
+            20% {
+                opacity: 1;
+            }
         }
+
         @keyframes countdown-pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
         }
 
-        .animate-float { animation: float 6s ease-in-out infinite; }
-        .animate-float-reverse { animation: float-reverse 5s ease-in-out infinite; }
-        .animate-float-slow { animation: float 8s ease-in-out infinite; }
-        .animate-float-horizontal { animation: float-horizontal 7s ease-in-out infinite; }
-        .animate-bounce-ball { animation: bounce-ball 4s ease-in-out infinite; }
-        .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
-        .animate-shimmer { animation: shimmer 3s ease-in-out infinite; }
-        .animate-spin-slow { animation: spin-slow 20s linear infinite; }
-        .animate-wiggle { animation: wiggle 3s ease-in-out infinite; }
-        .animate-ball-arc { animation: ball-arc 4s ease-in-out infinite; }
-        .animate-neon { animation: neon-flicker 4s ease-in-out infinite; }
-        .animate-glow-border { animation: glow-border 3s ease-in-out infinite; }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
 
+        .animate-float-reverse {
+            animation: float-reverse 5s ease-in-out infinite;
+        }
+
+        .animate-float-slow {
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .animate-float-horizontal {
+            animation: float-horizontal 7s ease-in-out infinite;
+        }
+
+        .animate-bounce-ball {
+            animation: bounce-ball 4s ease-in-out infinite;
+        }
+
+        .animate-pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        .animate-shimmer {
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        .animate-spin-slow {
+            animation: spin-slow 20s linear infinite;
+        }
+
+        .animate-wiggle {
+            animation: wiggle 3s ease-in-out infinite;
+        }
+
+        .animate-ball-arc {
+            animation: ball-arc 4s ease-in-out infinite;
+        }
+
+        .animate-neon {
+            animation: neon-flicker 4s ease-in-out infinite;
+        }
+
+        .animate-glow-border {
+            animation: glow-border 3s ease-in-out infinite;
+        }
     </style>
 </head>
 
@@ -139,18 +336,20 @@
     <svg class="hidden" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <!-- Ping Pong Ball -->
-<symbol id="ping-pong-ball" viewBox="0 0 40 40">
-    <circle cx="20" cy="20" r="18" fill="#ff9f43" stroke="#e67e22" stroke-width="0.5"/>
-    <ellipse cx="20" cy="20" rx="2" ry="18" fill="none" stroke="#d35400" stroke-width="0.5" transform="rotate(30 20 20)"/>
-    <circle cx="14" cy="12" r="4" fill="rgba(255, 200, 100, 0.8)" filter="blur(2px)"/>
-</symbol>
+            <symbol id="ping-pong-ball" viewBox="0 0 40 40">
+                <circle cx="20" cy="20" r="18" fill="#ff9f43" stroke="#e67e22" stroke-width="0.5" />
+                <ellipse cx="20" cy="20" rx="2" ry="18" fill="none" stroke="#d35400" stroke-width="0.5"
+                    transform="rotate(30 20 20)" />
+                <circle cx="14" cy="12" r="4" fill="rgba(255, 200, 100, 0.8)" filter="blur(2px)" />
+            </symbol>
             <!-- Red Cup -->
             <symbol id="red-cup" viewBox="0 0 60 80">
-                <path d="M10 5 L50 5 L45 75 L15 75 Z" fill="rgb(209, 24, 45)" stroke="rgb(180, 20, 38)" stroke-width="1"/>
-                <path d="M10 5 L50 5 L49 12 L11 12 Z" fill="rgba(255,255,255,0.15)"/>
-                <ellipse cx="30" cy="5" rx="20" ry="3" fill="rgb(220, 40, 55)"/>
-                <path d="M12 20 L48 20" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
-                <path d="M13 35 L47 35" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+                <path d="M10 5 L50 5 L45 75 L15 75 Z" fill="rgb(209, 24, 45)" stroke="rgb(180, 20, 38)"
+                    stroke-width="1" />
+                <path d="M10 5 L50 5 L49 12 L11 12 Z" fill="rgba(255,255,255,0.15)" />
+                <ellipse cx="30" cy="5" rx="20" ry="3" fill="rgb(220, 40, 55)" />
+                <path d="M12 20 L48 20" stroke="rgba(255,255,255,0.1)" stroke-width="0.5" />
+                <path d="M13 35 L47 35" stroke="rgba(255,255,255,0.08)" stroke-width="0.5" />
             </symbol>
         </defs>
     </svg>
@@ -159,15 +358,18 @@
 
 
         <!-- Top Navigation Bar -->
-        <nav class="flex flex-wrap items-center bg-navy/95 backdrop-blur-md sticky top-0 z-50 px-6 py-3 justify-between border-b border-white/10 shadow-lg shadow-navy/50 gap-4">
+        <nav
+            class="flex flex-wrap items-center bg-navy/95 backdrop-blur-md sticky top-0 z-50 px-6 py-3 justify-between border-b border-white/10 shadow-lg shadow-navy/50 gap-4">
             <div class="flex items-center gap-3">
-                <img src="imagenes/img.png" alt="Logo Chales" class="h-10 w-auto sm:h-12 md:h-14 object-contain" loading="lazy" />
+                <img src="imagenes/img.png" alt="Logo Chales" class="h-10 w-auto sm:h-12 md:h-14 object-contain"
+                    loading="lazy" />
                 <h2 class="text-slate-100 text-3xl sm:text-5xl font-black leading-tight tracking-tight">
                     CHALES PONG <span class="text-accent">CUP</span>
                 </h2>
             </div>
             <div class="flex items-center gap-3">
-                <a href="#register" class="hidden sm:flex items-center gap-2 bg-accent rounded-2xl hover:bg-red-700 text-white px-10 py-5 font-bold text-sm transition-all transform hover:scale-105">
+                <a href="#register"
+                    class="hidden sm:flex items-center gap-2 bg-accent rounded-2xl hover:bg-red-700 text-white px-10 py-5 font-bold text-sm transition-all transform hover:scale-105">
                     <span class="material-symbols-outlined text-xl">app_registration</span>
                     Inscribete al Torneo
                 </a>
@@ -181,26 +383,49 @@
             <div class="absolute inset-0 bg-gradient-to-br from-navy via-[#0f1a4a] to-[#1a0a2e]"></div>
             <!-- Decorative elements -->
             <div class="absolute inset-0 overflow-hidden pointer-events-none">
-                <svg class="w-8 h-8 absolute top-[25%] right-[12%] animate-float-reverse opacity-40" viewBox="0 0 40 40"><use href="#ping-pong-ball"/></svg>
-                <svg class="w-10 h-10 absolute bottom-[20%] left-[15%] animate-float-slow opacity-50" viewBox="0 0 40 40"><use href="#ping-pong-ball"/></svg>
-                <svg class="w-6 h-6 absolute top-[60%] right-[5%] animate-float opacity-30" viewBox="0 0 40 40"><use href="#ping-pong-ball"/></svg>
-                <svg class="w-14 h-14 absolute bottom-[10%] right-[20%] animate-float-reverse opacity-25" viewBox="0 0 40 40"><use href="#ping-pong-ball"/></svg>
-                <svg class="w-14 h-20 absolute bottom-[0%] left-[2%] opacity-15 rotate-[-8deg]" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
-                <svg class="w-14 h-20 absolute bottom-[0%] right-[2%] opacity-15 rotate-[8deg]" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
+                <svg class="w-8 h-8 absolute top-[25%] right-[12%] animate-float-reverse opacity-40"
+                    viewBox="0 0 40 40">
+                    <use href="#ping-pong-ball" />
+                </svg>
+                <svg class="w-10 h-10 absolute bottom-[20%] left-[15%] animate-float-slow opacity-50"
+                    viewBox="0 0 40 40">
+                    <use href="#ping-pong-ball" />
+                </svg>
+                <svg class="w-6 h-6 absolute top-[60%] right-[5%] animate-float opacity-30" viewBox="0 0 40 40">
+                    <use href="#ping-pong-ball" />
+                </svg>
+                <svg class="w-14 h-14 absolute bottom-[10%] right-[20%] animate-float-reverse opacity-25"
+                    viewBox="0 0 40 40">
+                    <use href="#ping-pong-ball" />
+                </svg>
+                <svg class="w-14 h-20 absolute bottom-[0%] left-[2%] opacity-15 rotate-[-8deg]" viewBox="0 0 60 80">
+                    <use href="#red-cup" />
+                </svg>
+                <svg class="w-14 h-20 absolute bottom-[0%] right-[2%] opacity-15 rotate-[8deg]" viewBox="0 0 60 80">
+                    <use href="#red-cup" />
+                </svg>
                 <div class="absolute top-[10%] right-[25%] w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
                 <div class="absolute bottom-0 left-[15%] w-80 h-80 bg-navy/60 rounded-full blur-3xl"></div>
             </div>
 
             <!-- Hero Content -->
-            <div class="relative z-10 flex flex-col items-center justify-center min-h-[320px] sm:min-h-[380px] px-6 py-16 text-center">
+            <div
+                class="relative z-10 flex flex-col items-center justify-center min-h-[320px] sm:min-h-[380px] px-6 py-16 text-center">
                 <!-- icon row -->
                 <div class="flex items-center justify-center gap-4 mb-5">
-                    <svg class="w-9 h-12 opacity-80" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
-                    <svg class="w-7 h-7 animate-bounce-ball" viewBox="0 0 40 40"><use href="#ping-pong-ball"/></svg>
-                    <svg class="w-9 h-12 opacity-80 scale-x-[-1]" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
+                    <svg class="w-9 h-12 opacity-80" viewBox="0 0 60 80">
+                        <use href="#red-cup" />
+                    </svg>
+                    <svg class="w-7 h-7 animate-bounce-ball" viewBox="0 0 40 40">
+                        <use href="#ping-pong-ball" />
+                    </svg>
+                    <svg class="w-9 h-12 opacity-80 scale-x-[-1]" viewBox="0 0 60 80">
+                        <use href="#red-cup" />
+                    </svg>
                 </div>
                 <!-- Badge -->
-                <div class="inline-flex items-center gap-2 bg-accent/20 border border-accent/30 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-accent mb-5">
+                <div
+                    class="inline-flex items-center gap-2 bg-accent/20 border border-accent/30 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-accent mb-5">
                     4 de abril de 2026
                 </div>
                 <h1 class="text-white text-4xl sm:text-6xl lg:text-7xl font-black leading-none tracking-tighter mb-3">
@@ -227,17 +452,39 @@
         <!-- Divider: Cup line -->
         <div class="relative h-16 bg-gradient-to-b from-navy to-background-dark overflow-hidden">
             <div class="absolute bottom-0 left-0 right-0 flex justify-center gap-8 opacity-30">
-                <svg class="w-6 h-8" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
-                <svg class="w-6 h-8" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
-                <svg class="w-6 h-8" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
-                <svg class="w-6 h-8" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
-                <svg class="w-6 h-8" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
-                <svg class="w-4 h-4 self-start animate-bounce-ball" viewBox="0 0 40 40"><use href="#ping-pong-ball"/></svg>
-                <svg class="w-6 h-8" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
-                <svg class="w-6 h-8" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
-                <svg class="w-6 h-8" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
-                <svg class="w-6 h-8" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
-                <svg class="w-6 h-8" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
+                <svg class="w-6 h-8" viewBox="0 0 60 80">
+                    <use href="#red-cup" />
+                </svg>
+                <svg class="w-6 h-8" viewBox="0 0 60 80">
+                    <use href="#red-cup" />
+                </svg>
+                <svg class="w-6 h-8" viewBox="0 0 60 80">
+                    <use href="#red-cup" />
+                </svg>
+                <svg class="w-6 h-8" viewBox="0 0 60 80">
+                    <use href="#red-cup" />
+                </svg>
+                <svg class="w-6 h-8" viewBox="0 0 60 80">
+                    <use href="#red-cup" />
+                </svg>
+                <svg class="w-4 h-4 self-start animate-bounce-ball" viewBox="0 0 40 40">
+                    <use href="#ping-pong-ball" />
+                </svg>
+                <svg class="w-6 h-8" viewBox="0 0 60 80">
+                    <use href="#red-cup" />
+                </svg>
+                <svg class="w-6 h-8" viewBox="0 0 60 80">
+                    <use href="#red-cup" />
+                </svg>
+                <svg class="w-6 h-8" viewBox="0 0 60 80">
+                    <use href="#red-cup" />
+                </svg>
+                <svg class="w-6 h-8" viewBox="0 0 60 80">
+                    <use href="#red-cup" />
+                </svg>
+                <svg class="w-6 h-8" viewBox="0 0 60 80">
+                    <use href="#red-cup" />
+                </svg>
             </div>
 
         </div>
@@ -246,33 +493,35 @@
 
         <!-- Event Info Section -->
         <section class="relative px-4 py-20 max-w-6xl mx-auto w-full" id="info">
-            <!-- Section decorative ball -->
-            <div class="absolute top-10 right-10 pointer-events-none opacity-10">
-                <svg class="w-24 h-24 animate-spin-slow" viewBox="0 0 40 40"><use href="#ping-pong-ball"/></svg>
-            </div>
 
             <div class="flex flex-col items-center text-center gap-4 mb-16">
-                <h2 class="text-4xl sm:text-5xl font-black text-white">Información del <span class="text-accent">Torneo</span></h2>
+                <h2 class="text-4xl sm:text-5xl font-black text-white">Información del <span
+                        class="text-accent">Torneo</span></h2>
                 <div class="w-24 h-1.5 bg-gradient-to-r from-accent to-navy rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-4xl mx-auto">
                 <!-- Rules -->
-                <div class="card-hover group flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 relative overflow-hidden" style="animation-delay: 0.1s;">
+                <div class="card-hover group flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 relative overflow-hidden"
+                    style="animation-delay: 0.1s;">
                     <!-- Top accent border -->
                     <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent to-accent/50"></div>
                     <!-- Decorative cup watermark -->
-                    <svg class="absolute -bottom-4 -right-4 w-24 h-32 opacity-5 group-hover:opacity-10 transition-opacity" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
+                    <svg class="absolute -bottom-4 -right-4 w-24 h-32 opacity-5 group-hover:opacity-10 transition-opacity"
+                        viewBox="0 0 60 80">
+                        <use href="#red-cup" />
+                    </svg>
 
-                    <div class="bg-accent/10 text-accent w-14 h-14 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div
+                        class="bg-accent/10 text-accent w-14 h-14 rounded-xl flex  justify-center group-hover:scale-110 transition-transform">
                         <span class="material-symbols-outlined text-3xl">menu_book</span>
                     </div>
                     <div>
                         <h3 class="text-white text-xl font-bold mb-3">Reglas del Torneo</h3>
 
                         <!--AQUI VAN REGLAS DEL TORNEO -->
-                        <a  href="reglamento.html"
-                           class=" inline-flex items-center gap-1 text-accent text-sm font-semibold mt-3 hover:underline">
+                        <a href="reglamento.html"
+                            class=" inline-flex items-center gap-1 text-accent text-sm font-semibold mt-3 hover:underline rounded-sm">
                             Ver reglamento completo
                             <span class="material-symbols-outlined text-sm">arrow_forward</span>
                         </a>
@@ -280,35 +529,52 @@
                 </div>
 
                 <!-- Prizes -->
-                <div class="card-hover group flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 relative overflow-hidden" style="animation-delay: 0.2s;">
-                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-500 to-yellow-500/50"></div>
-                    <svg class="absolute -bottom-2 -right-2 w-20 h-20 opacity-5 group-hover:opacity-10 transition-opacity" viewBox="0 0 40 40"><use href="#ping-pong-ball"/></svg>
+                <div class="card-hover group flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 relative overflow-hidden"
+                    style="animation-delay: 0.2s;">
+                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-500 to-yellow-500/50">
+                    </div>
+                    <svg class="absolute -bottom-2 -right-2 w-20 h-20 opacity-5 group-hover:opacity-10 transition-opacity"
+                        viewBox="0 0 40 40">
+                        <use href="#ping-pong-ball" />
+                    </svg>
 
-                    <div class="bg-yellow-500/10 text-yellow-500 w-14 h-14 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div
+                        class="bg-yellow-500/10 text-yellow-500 w-14 h-30 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
                         <span class="material-symbols-outlined text-3xl">trophy</span>
                     </div>
                     <div>
                         <h3 class="text-white text-xl font-bold mb-3">Lista de Premios</h3>
                         <ul class="text-slate-400 text-sm space-y-3">
-                            <li class="flex items-center gap-3 bg-yellow-500/5 rounded-lg px-3 py-2 border border-yellow-500/10">
-                                <span class="flex items-center justify-center w-8 h-8 rounded-full bg-yellow-500/20 text-yellow-500 font-black text-xs">🥇</span>
-                                <span><span class="font-bold text-yellow-500">1er Lugar:</span>2000 MXN en efectivo</span>
+                            <li
+                                class="flex items-center gap-3 bg-yellow-500/5 rounded-lg px-3 py-2 border border-yellow-500/10">
+                                <span
+                                    class="flex items-center justify-center w-8 h-8 rounded-full bg-yellow-500/20 text-yellow-500 font-black text-xs">1</span>
+                                <span><span class="font-bold text-yellow-500">1er Lugar:</span>2000 MXN en
+                                    efectivo</span>
                             </li>
-                            <li class="flex items-center gap-3 bg-slate-400/5 rounded-lg px-3 py-2 border border-slate-400/10">
-                                <span class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-400/20 text-slate-400 font-black text-xs">🥈</span>
-                                <span><span class="font-bold text-slate-300">2do Lugar:</span>Reingreso al siguente torneo</span>
+                            <li
+                                class="flex items-center gap-3 bg-slate-400/5 rounded-lg px-3 py-2 border border-slate-400/10">
+                                <span
+                                    class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-400/20 text-slate-400 font-black text-xs">2</span></span>
+                                <span><span class="font-bold text-slate-300">2do Lugar:</span>Reingreso al siguente
+                                    torneo</span>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <!-- Location -->
-                <div class="card-hover group flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 relative overflow-hidden md:col-span-3" style="animation-delay: 0.3s;">
+                <div class="card-hover group flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 relative overflow-hidden md:col-span-2"
+                    style="animation-delay: 0.3s;">
                     <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-blue-500/50"></div>
-                    <svg class="absolute -bottom-8 -right-8 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
+                    <svg class="absolute -bottom-8 -right-8 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity"
+                        viewBox="0 0 60 80">
+                        <use href="#red-cup" />
+                    </svg>
 
                     <div class="flex items-center gap-3">
-                        <div class="bg-blue-500/10 text-blue-400 w-14 h-14 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                        <div
+                            class="bg-blue-500/10 text-blue-400 w-14 h-14 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
                             <span class="material-symbols-outlined text-3xl">location_on</span>
                         </div>
                         <div>
@@ -318,13 +584,10 @@
                     </div>
 
                     <div class="w-full h-80 sm:h-96 rounded-xl overflow-hidden border border-white/10 shadow-xl">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3485.1907900046053!2d-111.05981249999999!3d29.12956250000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ce8112b50dcc83%3A0x76e0eb766a4c50a0!2sLAS%203%20SONIAS!5e0!3m2!1ses-419!2smx!4v1772123161713!5m2!1ses-419!2smx"
-                        width="100%"
-                        height="100%"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3485.1907900046053!2d-111.05981249999999!3d29.12956250000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ce8112b50dcc83%3A0x76e0eb766a4c50a0!2sLAS%203%20SONIAS!5e0!3m2!1ses-419!2smx!4v1772123161713!5m2!1ses-419!2smx"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
 
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-4">
@@ -357,19 +620,30 @@
                 <div class="absolute top-0 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl -mr-40 -mt-40"></div>
                 <div class="absolute bottom-0 left-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl -ml-40 -mb-40"></div>
                 <!-- Floating balls -->
-                <svg class="w-8 h-8 absolute top-[20%] right-[8%] animate-float opacity-20" viewBox="0 0 40 40"><use href="#ping-pong-ball"/></svg>
-                <svg class="w-6 h-6 absolute bottom-[15%] left-[5%] animate-float-reverse opacity-15" viewBox="0 0 40 40"><use href="#ping-pong-ball"/></svg>
+                <svg class="w-8 h-8 absolute top-[20%] right-[8%] animate-float opacity-20" viewBox="0 0 40 40">
+                    <use href="#ping-pong-ball" />
+                </svg>
+                <svg class="w-6 h-6 absolute bottom-[15%] left-[5%] animate-float-reverse opacity-15"
+                    viewBox="0 0 40 40">
+                    <use href="#ping-pong-ball" />
+                </svg>
                 <!-- Cup formations -->
-                <svg class="w-20 h-28 absolute bottom-0 right-[5%] opacity-10 rotate-[8deg]" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
-                <svg class="w-16 h-22 absolute bottom-0 left-[5%] opacity-10 rotate-[-8deg]" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
+                <svg class="w-20 h-28 absolute bottom-0 right-[5%] opacity-10 rotate-[8deg]" viewBox="0 0 60 80">
+                    <use href="#red-cup" />
+                </svg>
+                <svg class="w-16 h-22 absolute bottom-0 left-[5%] opacity-10 rotate-[-8deg]" viewBox="0 0 60 80">
+                    <use href="#red-cup" />
+                </svg>
             </div>
 
             <div class="max-w-xl mx-auto relative z-10">
                 <div class="text-center mb-10">
-                    <div class="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-accent mb-4">
+                    <div
+                        class="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-accent mb-4">
                         <span class="material-symbols-outlined text-sm">group_add</span> Inscripción abierta
                     </div>
-                    <h1 class="text-white text-4xl sm:text-5xl font-black">Registro de la <span class="text-accent">Dupla</span></h1>
+                    <h1 class="text-white text-4xl sm:text-5xl font-black">Registro de la <span
+                            class="text-accent">Dupla</span></h1>
                     <div class="flex justify-center mt-4">
                         <div class="w-16 h-1 bg-gradient-to-r from-accent to-accent/30 rounded-full"></div>
                     </div>
@@ -378,7 +652,9 @@
                 <!-- Form Card -->
                 <div class="relative rounded-2xl overflow-hidden">
                     <!-- Gradient border effect -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-accent/30 via-white/10 to-accent/10 rounded-2xl"></div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-accent/30 via-white/10 to-accent/10 rounded-2xl">
+                    </div>
                     <div class="relative m-[1px] bg-navy/90 backdrop-blur-xl rounded-2xl p-8 sm:p-10">
                         <form class="space-y-6">
                             <div class="space-y-2">
@@ -429,7 +705,8 @@
                                     type="submit">
                                     <span class="material-symbols-outlined">send</span>
                                     Enviar Registro
-                                </button><p class="text-slate-500 text-xs text-center mt-4 leading-relaxed">
+                                </button>
+                                <p class="text-slate-500 text-xs text-center mt-4 leading-relaxed">
                                     Al registrarse, se compromete a respetar las reglas del torneo.
                                 </p>
                             </div>
@@ -443,17 +720,30 @@
         <footer class="relative bg-navy border-t border-white/5 py-12 px-6 overflow-hidden">
             <!-- Decorative -->
             <div class="absolute inset-0 pointer-events-none opacity-5 flex items-end justify-center gap-3 pb-2">
-                <svg class="w-8 h-11" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
-                <svg class="w-8 h-11" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
-                <svg class="w-5 h-5" viewBox="0 0 40 40"><use href="#ping-pong-ball"/></svg>
-                <svg class="w-8 h-11" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
-                <svg class="w-8 h-11" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
+                <svg class="w-8 h-11" viewBox="0 0 60 80">
+                    <use href="#red-cup" />
+                </svg>
+                <svg class="w-8 h-11" viewBox="0 0 60 80">
+                    <use href="#red-cup" />
+                </svg>
+                <svg class="w-5 h-5" viewBox="0 0 40 40">
+                    <use href="#ping-pong-ball" />
+                </svg>
+                <svg class="w-8 h-11" viewBox="0 0 60 80">
+                    <use href="#red-cup" />
+                </svg>
+                <svg class="w-8 h-11" viewBox="0 0 60 80">
+                    <use href="#red-cup" />
+                </svg>
             </div>
 
             <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 relative z-10">
                 <div class="flex items-center gap-3">
-                    <svg class="w-6 h-8" viewBox="0 0 60 80"><use href="#red-cup"/></svg>
-                    <span class="text-white font-black text-xl tracking-tight">CHALES <span class="text-accent">CUP</span></span>
+                    <svg class="w-6 h-8" viewBox="0 0 60 80">
+                        <use href="#red-cup" />
+                    </svg>
+                    <span class="text-white font-black text-xl tracking-tight">CHALES <span
+                            class="text-accent">CUP</span></span>
                 </div>
                 <div class="flex gap-8 text-slate-400 font-medium text-sm">
                     <a class="hover:text-accent transition-colors flex items-center gap-1" href="reglamento.html">
@@ -462,13 +752,9 @@
                     </a>
                 </div>
             </div>
-            <div class="text-center mt-10 text-slate-600 text-xl">
-                Chales Cup puto el que lea esto
-            </div>
         </footer>
     </div>
 
-    </body>
+</body>
 
 </html>
-
