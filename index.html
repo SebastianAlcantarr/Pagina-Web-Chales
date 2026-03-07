@@ -327,10 +327,57 @@
         .animate-glow-border {
             animation: glow-border 3s ease-in-out infinite;
         }
+
+        /* Toast & form animations */
+        @keyframes confetti-fall {
+            0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 1; }
+            75% { opacity: 1; }
+            100% { transform: translateY(100vh) translateX(var(--drift, 0px)) rotate(720deg); opacity: 0; }
+        }
+
+        @keyframes confetti-explode {
+            0% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 1; }
+            100% { transform: translate(var(--endX, 50vw), var(--endY, 50vh)) rotate(var(--rot, 360deg)) scale(0.3); opacity: 0; }
+        }
+
+        @keyframes shockwave {
+            0% { transform: translate(-50%, -50%) scale(0); opacity: 0.7; border-width: 4px; }
+            100% { transform: translate(-50%, -50%) scale(80); opacity: 0; border-width: 1px; }
+        }
+
+        @keyframes sparkle-pop {
+            0% { transform: scale(0) rotate(0deg); opacity: 0; }
+            50% { transform: scale(1.3) rotate(180deg); opacity: 1; }
+            100% { transform: scale(0) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-8px); }
+            40% { transform: translateX(8px); }
+            60% { transform: translateX(-6px); }
+            80% { transform: translateX(6px); }
+        }
+
+        .animate-shake {
+            animation: shake 0.5s ease-in-out;
+        }
+
+        @keyframes icon-pop {
+            0% { transform: scale(0) rotate(-45deg); }
+            60% { transform: scale(1.2) rotate(5deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+
+        .animate-icon-pop {
+            animation: icon-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
     </style>
 </head>
 
 <body class="bg-background-dark font-display text-slate-100 antialiased">
+
+    <div id="notifications" class="fixed top-4 right-4 z-50 w-full max-w-sm space-y-3 pointer-events-none"></div>
 
     <!-- SVG Definitions for reuse -->
     <svg class="hidden" xmlns="http://www.w3.org/2000/svg">
@@ -499,10 +546,9 @@
                 <h2 class="text-4xl sm:text-5xl font-black text-white">Información del <span
                         class="text-accent">Torneo</span></h2>
                 <div class="w-24 h-1.5 bg-gradient-to-r from-accent to-navy rounded-full"></div>
-            <a class="text-5xl text-white font-black">
-            <a class="text-5xl text-white font-black">
-                        EVENTO EXCLUSIVO PARA MAYORES DE EDAD
-                    </a>
+                <p class="text-5xl text-white font-black">
+                    EVENTO EXCLUSIVO PARA MAYORES DE EDAD
+                </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-4xl mx-auto">
@@ -560,7 +606,7 @@
                             <li
                                 class="flex items-center gap-3 bg-slate-400/5 rounded-lg px-3 py-2 border border-slate-400/10">
                                 <span
-                                    class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-400/20 text-slate-400 font-black text-xs">2</span></span>
+                                    class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-400/20 text-slate-400 font-black text-xs">2</span>
                                 <span><span class="font-bold text-slate-300">2do Lugar:</span>Reingreso al siguente
                                     torneo</span>
                             </li>
@@ -661,7 +707,7 @@
                         class="absolute inset-0 bg-gradient-to-br from-accent/30 via-white/10 to-accent/10 rounded-2xl">
                     </div>
                     <div class="relative m-[1px] bg-navy/90 backdrop-blur-xl rounded-2xl p-8 sm:p-10">
-                        <form class="space-y-6">
+                        <form class="space-y-6" id="register-form" autocomplete="off">
                             <div class="space-y-2">
                                 <label class="text-slate-300 text-sm font-semibold ml-1 flex items-center gap-2">
                                     <span class="material-symbols-outlined text-accent text-sm">groups</span>
@@ -669,7 +715,7 @@
                                 </label>
                                 <input
                                     class="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 px-4 text-white focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent placeholder-slate-600 transition-all hover:border-white/20"
-                                    placeholder="Ej: Los Chales" type="text" />
+                                    placeholder="Ej: Los Chales" type="text" id="nombre_equipo" name="nombre_equipo" required />
                             </div>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div class="space-y-2">
@@ -679,7 +725,7 @@
                                     </label>
                                     <input
                                         class="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 px-4 text-white focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent placeholder-slate-600 transition-all hover:border-white/20"
-                                        placeholder="Nombre completo" type="text" />
+                                        placeholder="Nombre completo" type="text" id="nombre_jugador_uno" name="nombre_jugador_uno" required />
                                 </div>
                                 <div class="space-y-2">
                                     <label class="text-slate-300 text-sm font-semibold ml-1 flex items-center gap-2">
@@ -688,20 +734,20 @@
                                     </label>
                                     <input
                                         class="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 px-4 text-white focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent placeholder-slate-600 transition-all hover:border-white/20"
-                                        placeholder="Nombre completo" type="text" />
+                                        placeholder="Nombre completo" type="text" id="nombre_jugador_dos" name="nombre_jugador_dos" required />
                                 </div>
                             </div>
                             <div class="space-y-2">
                                 <label class="text-slate-300 text-sm font-semibold ml-1 flex items-center gap-2">
                                     <span class="material-symbols-outlined text-accent text-sm">call</span>
-                                    Número de Teléfono
+                                    Número de Teléfono de Contacto
                                 </label>
                                 <div class="relative">
                                     <span
                                         class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-600">call</span>
                                     <input
                                         class="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 pl-12 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent placeholder-slate-600 transition-all hover:border-white/20"
-                                        placeholder="Ej : 6625900712" type="tel" />
+                                        placeholder="Ej : 6625900712" type="tel" id="num_telefono" name="num_telefono" required />
                                 </div>
                             </div>
                             <div class="pt-4">
@@ -723,43 +769,343 @@
 
         <!-- Footer -->
         <footer class="relative bg-navy border-t border-white/5 py-12 px-6 overflow-hidden">
-            <!-- Decorative -->
-            <div class="absolute inset-0 pointer-events-none opacity-5 flex items-end justify-center gap-3 pb-2">
-                <svg class="w-8 h-11" viewBox="0 0 60 80">
-                    <use href="#red-cup" />
-                </svg>
-                <svg class="w-8 h-11" viewBox="0 0 60 80">
-                    <use href="#red-cup" />
-                </svg>
-                <svg class="w-5 h-5" viewBox="0 0 40 40">
-                    <use href="#ping-pong-ball" />
-                </svg>
-                <svg class="w-8 h-11" viewBox="0 0 60 80">
-                    <use href="#red-cup" />
-                </svg>
-                <svg class="w-8 h-11" viewBox="0 0 60 80">
-                    <use href="#red-cup" />
-                </svg>
-            </div>
+             <!-- Decorative -->
+             <div class="absolute inset-0 pointer-events-none opacity-5 flex items-end justify-center gap-3 pb-2">
+                 <svg class="w-8 h-11" viewBox="0 0 60 80">
+                     <use href="#red-cup" />
+                 </svg>
+                 <svg class="w-8 h-11" viewBox="0 0 60 80">
+                     <use href="#red-cup" />
+                 </svg>
+                 <svg class="w-5 h-5" viewBox="0 0 40 40">
+                     <use href="#ping-pong-ball" />
+                 </svg>
+                 <svg class="w-8 h-11" viewBox="0 0 60 80">
+                     <use href="#red-cup" />
+                 </svg>
+                 <svg class="w-8 h-11" viewBox="0 0 60 80">
+                     <use href="#red-cup" />
+                 </svg>
+             </div>
 
-            <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 relative z-10">
-                <div class="flex items-center gap-3">
-                    <svg class="w-6 h-8" viewBox="0 0 60 80">
-                        <use href="#red-cup" />
-                    </svg>
-                    <span class="text-white font-black text-xl tracking-tight">CHALES <span
-                            class="text-accent">CUP</span></span>
-                </div>
-                <div class="flex gap-8 text-slate-400 font-medium text-sm">
-                    <a class="hover:text-accent transition-colors flex items-center gap-1" href="reglamento.html">
-                        <span class="material-symbols-outlined text-sm">description</span>
-                        Reglas del Torneo
-                    </a>
-                </div>
-            </div>
-        </footer>
-    </div>
+             <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 relative z-10">
+                 <div class="flex items-center gap-3">
+                     <svg class="w-6 h-8" viewBox="0 0 60 80">
+                         <use href="#red-cup" />
+                     </svg>
+                     <span class="text-white font-black text-xl tracking-tight">CHALES <span
+                             class="text-accent">CUP</span></span>
+                 </div>
+                 <div class="flex gap-8 text-slate-400 font-medium text-sm">
+                     <a class="hover:text-accent transition-colors flex items-center gap-1" href="reglamento.html">
+                         <span class="material-symbols-outlined text-sm">description</span>
+                         Reglas del Torneo
+                     </a>
+                 </div>
+             </div>
+         </footer>
+        <script>
+            const showNotification = (type, message) => {
+                const container = document.getElementById('notifications');
+                if (!container) return;
 
-</body>
+                const typeStyles = {
+                    success: {
+                        icon: 'celebration',
+                        title: '¡Dupla Guardada!',
+                        bg: 'bg-navy/95',
+                        border: 'border-accent/50',
+                        iconBg: 'bg-accent/20 text-accent',
+                        progressColor: 'bg-accent',
+                    },
+                    conflict: {
+                        icon: 'warning',
+                        title: 'Dupla ya registrada',
+                        bg: 'bg-navy/95',
+                        border: 'border-yellow-500/40',
+                        iconBg: 'bg-yellow-500/20 text-yellow-400',
+                        progressColor: 'bg-yellow-500',
+                    },
+                    validation: {
+                        icon: 'info',
+                        title: 'Datos incompletos',
+                        bg: 'bg-navy/95',
+                        border: 'border-white/20',
+                        iconBg: 'bg-white/10 text-slate-300',
+                        progressColor: 'bg-white/40',
+                    },
+                    network: {
+                        icon: 'cloud_off',
+                        title: 'Error de conexión',
+                        bg: 'bg-navy/95',
+                        border: 'border-accent/30',
+                        iconBg: 'bg-accent/10 text-accent/80',
+                        progressColor: 'bg-accent/60',
+                    },
+                };
 
-</html>
+                const style = typeStyles[type] || typeStyles.validation;
+
+                const toast = document.createElement('div');
+                toast.setAttribute('role', 'status');
+                toast.className = `pointer-events-auto rounded-2xl border ${style.border} ${style.bg} backdrop-blur-xl shadow-2xl shadow-black/40 px-5 py-4 flex flex-col gap-0 transform transition-all duration-500 ease-out translate-x-full opacity-0 overflow-hidden`;
+                toast.innerHTML = `
+                    <div class="flex gap-3 items-start">
+                        <div class="${style.iconBg} rounded-xl w-10 h-10 flex items-center justify-center flex-shrink-0 animate-icon-pop">
+                            <span class="material-symbols-outlined text-xl">${style.icon}</span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <p class="text-white font-bold text-sm leading-tight">${style.title}</p>
+                            <p class="text-slate-400 text-xs leading-snug mt-1">${message}</p>
+                        </div>
+                        <button aria-label="Cerrar" class="text-slate-500 hover:text-white transition-colors mt-0.5 flex-shrink-0" type="button">
+                            <span class="material-symbols-outlined text-lg">close</span>
+                        </button>
+                    </div>
+                    <div class="w-full h-0.5 rounded-full bg-white/5 mt-3 overflow-hidden">
+                        <div class="${style.progressColor} h-full rounded-full toast-progress" style="width:100%;transition:width 4.8s linear"></div>
+                    </div>
+                `;
+
+                const removeToast = () => {
+                    toast.classList.add('translate-x-full', 'opacity-0');
+                    toast.style.marginTop = '-' + toast.offsetHeight + 'px';
+                    toast.style.transition = 'all 0.4s ease-in';
+                    setTimeout(() => toast.remove(), 400);
+                };
+
+                toast.querySelector('button')?.addEventListener('click', removeToast);
+
+                container.appendChild(toast);
+
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        toast.classList.remove('translate-x-full', 'opacity-0');
+                        toast.classList.add('translate-x-0');
+                        const bar = toast.querySelector('.toast-progress');
+                        if (bar) {
+                            setTimeout(() => { bar.style.width = '0%'; }, 50);
+                        }
+                    });
+                });
+
+                setTimeout(removeToast, 5000);
+            };
+
+            /* 🎉 MASSIVE celebration animation */
+            const showSuccessConfetti = () => {
+                const colors = ['#d1182d', '#ff3352', '#13214f', '#ff9f43', '#ffd700', '#ffffff', '#ff6b6b', '#48dbfb'];
+
+                /* === FULL-SCREEN OVERLAY === */
+                const overlay = document.createElement('div');
+                overlay.style.cssText = `
+                    position:fixed;inset:0;z-index:9999;
+                    display:flex;align-items:center;justify-content:center;flex-direction:column;
+                    background:rgba(13,17,23,0);
+                    transition:background 0.4s ease;
+                    pointer-events:none;
+                `;
+                overlay.innerHTML = `
+                    <div class="success-checkmark" style="opacity:0;transform:scale(0);transition:all 0.6s cubic-bezier(0.34,1.56,0.64,1) 0.3s;">
+                        <div style="width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#d1182d,#ff3352);display:flex;align-items:center;justify-content:center;box-shadow:0 0 60px rgba(209,24,45,0.6),0 0 120px rgba(209,24,45,0.3);">
+                            <span class="material-symbols-outlined" style="font-size:64px;color:white;font-variation-settings:'FILL' 1;">check_circle</span>
+                        </div>
+                    </div>
+                    <p style="color:white;font-size:2.5rem;font-weight:900;margin-top:24px;opacity:0;transform:translateY(30px);transition:all 0.5s ease 0.6s;text-align:center;text-shadow:0 4px 20px rgba(0,0,0,0.5);">
+                            Registro Exitoso
+                    </p>
+                    <p style="color:rgba(255,255,255,0.7);font-size:1.1rem;font-weight:500;margin-top:8px;opacity:0;transform:translateY(20px);transition:all 0.5s ease 0.8s;text-align:center;">
+                       El equipo se ha registrado con exito
+                    </p>
+                `;
+                document.body.appendChild(overlay);
+
+                /* Animate overlay in */
+                requestAnimationFrame(() => {
+                    overlay.style.background = 'rgba(13,17,23,0.85)';
+                    const check = overlay.querySelector('.success-checkmark');
+                    if (check) { check.style.opacity = '1'; check.style.transform = 'scale(1)'; }
+                    overlay.querySelectorAll('p').forEach(p => { p.style.opacity = '1'; p.style.transform = 'translateY(0)'; });
+                });
+
+                /* === SHOCKWAVE RINGS === */
+                for (let r = 0; r < 3; r++) {
+                    const ring = document.createElement('div');
+                    ring.style.cssText = `
+                        position:fixed;top:50%;left:50%;z-index:10000;
+                        width:10px;height:10px;border-radius:50%;
+                        border:3px solid ${colors[r % colors.length]};
+                        transform:translate(-50%,-50%) scale(0);
+                        opacity:0.8;pointer-events:none;
+                        animation:shockwave 1.2s ${r * 0.2}s ease-out forwards;
+                    `;
+                    document.body.appendChild(ring);
+                    setTimeout(() => ring.remove(), 2000);
+                }
+
+                /* === CONFETTI EXPLOSION — 120 pieces === */
+                const confettiContainer = document.createElement('div');
+                confettiContainer.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:10001;overflow:hidden;';
+                document.body.appendChild(confettiContainer);
+
+                for (let i = 0; i < 120; i++) {
+                    const piece = document.createElement('div');
+                    const size = Math.random() * 12 + 5;
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    const startX = 40 + Math.random() * 20; /* start near center */
+                    const startY = 40 + Math.random() * 20;
+                    const angle = Math.random() * 360;
+                    const velocity = 300 + Math.random() * 600;
+                    const endX = startX + Math.cos(angle * Math.PI / 180) * velocity / 10;
+                    const endY = startY + Math.sin(angle * Math.PI / 180) * velocity / 10 + 40;
+                    const rotation = Math.random() * 1080 - 540;
+                    const delay = Math.random() * 0.3;
+                    const duration = 1.5 + Math.random() * 1.5;
+                    const shape = Math.random();
+
+                    let borderRadius = '50%';
+                    let w = size, h = size;
+                    if (shape > 0.6) { borderRadius = '2px'; w = size * 0.4; h = size * 1.5; }
+                    else if (shape > 0.3) { borderRadius = '1px'; }
+
+                    piece.style.cssText = `
+                        position:absolute;
+                        left:${startX}%;top:${startY}%;
+                        width:${w}px;height:${h}px;
+                        background:${color};
+                        border-radius:${borderRadius};
+                        opacity:1;pointer-events:none;
+                        animation:confetti-explode ${duration}s ${delay}s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
+                        --endX:${endX - startX}vw;
+                        --endY:${endY - startY}vh;
+                        --rot:${rotation}deg;
+                    `;
+                    confettiContainer.appendChild(piece);
+                }
+
+                /* === SIDE CANNONS — falling from top === */
+                for (let i = 0; i < 60; i++) {
+                    const piece = document.createElement('div');
+                    const size = Math.random() * 10 + 4;
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    const left = Math.random() * 100;
+                    const delay = 0.5 + Math.random() * 1;
+                    const drift = (Math.random() - 0.5) * 300;
+                    const duration = 2 + Math.random() * 2;
+                    piece.style.cssText = `
+                        position:absolute;top:-20px;left:${left}%;
+                        width:${size}px;height:${size * (Math.random() > 0.5 ? 1 : 2.5)}px;
+                        background:${color};
+                        border-radius:${Math.random() > 0.5 ? '50%' : '2px'};
+                        opacity:0;pointer-events:none;
+                        animation:confetti-fall ${duration}s ${delay}s ease-out forwards;
+                        --drift:${drift}px;
+                    `;
+                    confettiContainer.appendChild(piece);
+                }
+
+                /* === SPARKLE STARS === */
+                for (let i = 0; i < 20; i++) {
+                    const star = document.createElement('div');
+                    const x = Math.random() * 100;
+                    const y = Math.random() * 100;
+                    const delay = Math.random() * 2;
+                    const size = Math.random() * 20 + 10;
+                    star.style.cssText = `
+                        position:absolute;left:${x}%;top:${y}%;
+                        width:${size}px;height:${size}px;
+                        pointer-events:none;opacity:0;
+                        animation:sparkle-pop 0.8s ${delay}s ease-out forwards;
+                    `;
+                    star.innerHTML = `<svg viewBox="0 0 24 24" fill="${colors[Math.floor(Math.random() * colors.length)]}" width="${size}" height="${size}"><polygon points="12,2 15,9 22,9.5 17,14 18.5,21 12,17 5.5,21 7,14 2,9.5 9,9"/></svg>`;
+                    confettiContainer.appendChild(star);
+                }
+
+                /* === CLEANUP === */
+                /* Fade out overlay after a while */
+                setTimeout(() => {
+                    overlay.style.transition = 'opacity 0.8s ease';
+                    overlay.style.opacity = '0';
+                    setTimeout(() => overlay.remove(), 800);
+                }, 3000);
+
+                setTimeout(() => confettiContainer.remove(), 5000);
+            };
+
+            (() => {
+                const form = document.getElementById('register-form');
+                const submitBtn = form?.querySelector('button[type="submit"]');
+                if (!form) return;
+
+                form.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+
+                    const telefono = form.num_telefono.value.replace(/\D/g, '').trim();
+                    const payload = {
+                        nombre_equipo: form.nombre_equipo.value.trim(),
+                        nombre_jugador_uno: form.nombre_jugador_uno.value.trim(),
+                        nombre_jugador_dos: form.nombre_jugador_dos.value.trim(),
+                        num_telefono: telefono ? parseInt(telefono, 10) : null,
+                    };
+
+                    if (!payload.nombre_equipo || !payload.nombre_jugador_uno || !payload.nombre_jugador_dos || !payload.num_telefono) {
+                        showNotification('validation', 'Completa todos los campos antes de enviar.');
+                        /* Shake the form */
+                        form.classList.add('animate-shake');
+                        setTimeout(() => form.classList.remove('animate-shake'), 600);
+                        return;
+                    }
+
+                    /* Loading state */
+                    if (submitBtn) {
+                        submitBtn.disabled = true;
+                        submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> Registrando...';
+                    }
+
+                    try {
+                        const response = await fetch('http://127.0.0.1:8000/guardar_dupla', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(payload),
+                        });
+
+                        const data = await response.json().catch(() => ({}));
+
+                        if (response.status === 201) {
+                            showNotification('success', '¡Dupla registrada con éxito! Nos vemos en el torneo 🏓');
+                            showSuccessConfetti();
+                            form.reset();
+                            return;
+                        }
+
+                        if (response.status === 409) {
+                            showNotification('conflict', data.detail || 'Esta dupla ya fue registrada. No es necesario volver a enviar.');
+                            return;
+                        }
+
+                        if (response.status === 400) {
+                            showNotification('validation', data.detail || 'Revisa la información ingresada.');
+                            return;
+                        }
+
+                        showNotification('validation', data.detail || 'No se pudo registrar la dupla. Inténtalo de nuevo.');
+                    } catch (error) {
+                        console.error('Error al registrar dupla:', error);
+                        showNotification('network', 'No se pudo conectar con el servidor. Inténtalo más tarde.');
+                    } finally {
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = '<span class="material-symbols-outlined">send</span> Enviar Registro';
+                        }
+                    }
+                });
+            })();
+        </script>
+     </div>
+
+ </body>
+
+ </html>
+
