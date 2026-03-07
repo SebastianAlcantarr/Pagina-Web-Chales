@@ -804,7 +804,13 @@
                  </div>
              </div>
          </footer>
-        <script>
+        <script type="module">
+            import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+
+const supabase = createClient(
+    'https://pgolkhhchlcnstsohvqf.supabase.co',
+    'sb_publishable_RQbybfhuvQxzNzDbwzh89g_EQD73tnx'
+)
             const showNotification = (type, message) => {
                 const container = document.getElementById('notifications');
                 if (!container) return;
@@ -1062,35 +1068,26 @@
                         submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> Registrando...';
                     }
 
+                    // ✅ LO REEMPLAZAS CON ESTO:
                     try {
-                        const response = await fetch('http://127.0.0.1:8000/guardar_dupla', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify(payload),
-                        });
+                        const { error } = await supabase
+                            .from('duplas')
+                            .insert(payload)
 
-                        const data = await response.json().catch(() => ({}));
-
-                        if (response.status === 201) {
-                            showNotification('success', '¡Dupla registrada con éxito! Nos vemos en el torneo 🏓');
-                            showSuccessConfetti();
-                            form.reset();
+                        if (error) {
+                            // Registro duplicado (si tienes unique constraint en Supabase)
+                            if (error.code === '23505') {
+                                showNotification('conflict', 'Esta dupla ya fue registrada. No es necesario volver a enviar.');
+                                return;
+                            }
+                            showNotification('validation', error.message || 'No se pudo registrar la dupla. Inténtalo de nuevo.');
                             return;
                         }
 
-                        if (response.status === 409) {
-                            showNotification('conflict', data.detail || 'Esta dupla ya fue registrada. No es necesario volver a enviar.');
-                            return;
-                        }
+                        showNotification('success', '¡Dupla registrada con éxito! Nos vemos en el torneo 🏓');
+                        showSuccessConfetti();
+                        form.reset();
 
-                        if (response.status === 400) {
-                            showNotification('validation', data.detail || 'Revisa la información ingresada.');
-                            return;
-                        }
-
-                        showNotification('validation', data.detail || 'No se pudo registrar la dupla. Inténtalo de nuevo.');
                     } catch (error) {
                         console.error('Error al registrar dupla:', error);
                         showNotification('network', 'No se pudo conectar con el servidor. Inténtalo más tarde.');
